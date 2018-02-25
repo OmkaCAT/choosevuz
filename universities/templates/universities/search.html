@@ -1,0 +1,13 @@
+{% extends 'universities/base.html' %}
+
+{% block content %}
+    <table class="table">
+        {% for specialty in specialties %}
+            <tr>
+                <td>{{ specialty.specialty.title }}</td>
+                <td>{{ specialty.university.short_title }}</td>
+                <td>{{ specialty.score }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'universities/base.html' %}
+{% block content %}
+    <div>
+        <h1>{{ specialty.title }}</h1>
+        <p>{{ specialty.code }}</p>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Университеты реализующие данное направление</th>
+                <th scope="col">Проходной балл</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for university in universities %}
+                <tr>
+                    <td><a href="{% url 'university_detail' pk=university.university.pk %}">{{ university.university.short_title }}</a></td>
+                    <td>{{ university.score }}</td>
+                </tr>
+            {%  endfor %}
+        </tbody>
+    </table>
+{%  endblock %}

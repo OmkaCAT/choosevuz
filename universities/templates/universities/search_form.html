@@ -1,0 +1,18 @@
+{% extends 'universities/base.html' %}
+
+{% block content %}
+    <div class="row">
+        <form action="/search/" method="get" class="col">
+            <div class="form-row">
+                {% for subject in subjects %}
+                    <div class="form-group col-md-4">
+                        <label for="subject_{{ subject.id }}">{{ subject.title }}</label>
+                        <input max="100" min="0" class="form-control" type="number" id="subject_{{ subject.id }}"
+                               name="subject_{{ subject.id }}">
+                    </div>
+                {% endfor %}
+            </div>
+            <input class="btn btn-primary" type="submit" value="Поиск">
+        </form>
+    </div>
+{% endblock %}

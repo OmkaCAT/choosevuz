@@ -1,0 +1,20 @@
+{% extends 'universities/base.html' %}
+
+{% block content %}
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Краткое наименование</th>
+            <th>Полное наименование</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for university in universities %}
+            <tr>
+                <td><a href="{% url 'university_detail' pk=university.pk %}">{{ university.short_title }}</a></td>
+                <td>{{ university.full_title }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
