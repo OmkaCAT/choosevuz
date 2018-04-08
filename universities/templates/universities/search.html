@@ -1,7 +1,15 @@
-{% extends 'universities/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
-    <table class="table">
+  <div class="container w">
+    <table class="table table-primary table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Специальности</th>
+            <th scope="col">Университеты</th>
+            <th scope="col">Количество баллов</th>
+        </tr>
+        </thead>
         {% for specialty in specialties %}
             <tr>
                 <td>{{ specialty.specialty.title }}</td>
@@ -10,4 +18,5 @@
             </tr>
         {% endfor %}
     </table>
+  </div>
 {% endblock %}

@@ -1,0 +1,110 @@
+{% load staticfiles %}
+body {
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #000000;
+  margin-top: 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  color: #333;
+}
+
+.centered {
+  text-align: center;
+}
+
+a {
+  font-weight: 300;
+  color: #333;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+.navbar-light .navbar-nav > li > a:hover, .navbar-light .navbar-nav > li > a:focus {
+    color: #333;
+    border-bottom: solid red;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.navbar {
+  padding: 0;
+  font-weight: 200;
+  font-size: 12px;
+}
+
+.navbar-light {
+  background: #eeeeee;
+  border-color: #eeeeee;
+}
+
+.nav > li {
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.navbar-light .navbar-nav > .active > a {
+  border-bottom: solid red;
+  color: #333;
+  font-weight: bold
+}
+
+.navbar-light .navbar-brand {
+  color: #555;
+  font-weight: bolder;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+#headerwrap {
+  background: url("/static/img/back.jpg") no-repeat center top;
+  text-align: center;
+  background-attachment: relative;
+  background-position: center center;
+  min-height: 370px;
+  width: 100%;
+  background-size: cover;
+}
+
+#headerwrap h3 {
+  margin-top: 80px;
+  color: white;
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+#headerwrap h1 {
+  color: white;
+  font-size: 70px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.w {
+  padding-top: 30px;
+}
+
+.w img {
+  background-attachment: relative;
+  background-position: center center;
+  height: 100px;
+  width: 70%;
+  background-size: cover;
+}
+
+p {
+  word-wrap: break-word;
+}

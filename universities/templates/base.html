@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+      <meta charset="UTF-8">
+      <title>Главная страница</title>
+      {% load bootstrap4 %}
+      {% bootstrap_css %}
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <div class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+          <a href="{% url 'index' %}" class="navbar-brand">CHOOSEVUZ</a>
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item {% if pages == 'index' %} active {% endif %}">
+                <a href="{% url 'index' %}">Главная</a>
+              </li>
+              <li class="nav-item {% if pages == 'university' %} active {% endif %}">
+                <a href="{% url 'university_list' %}">Вузы</a>
+              </li>
+              <li class="nav-item {% if pages == 'specialty' %} active {% endif %}">
+                <a href="{% url 'specialty_list' %}">Специальности</a>
+              </li>
+              <li class="nav-item {% if pages == 'search_form' %} active {% endif %}">
+                <a href="{% url 'subjects_and_scores_search_form' %}">Поиск</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% block content %}
+      {% endblock %}
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  </body>
+</html>

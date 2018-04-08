@@ -1,7 +1,8 @@
-{% extends 'universities/base.html' %}
+{% extends 'base.html' %}
 {% block content %}
-    <table class="table">
-        <thead>
+  <div class="container w">
+    <table class="table table-primary table-hover">
+        <thead class="thead-dark">
         <tr>
             <th scope="col">Код</th>
             <th scope="col">Наименование</th>
@@ -9,11 +10,12 @@
         </thead>
         <tbody>
         {% for specialty in specialties %}
-            <tr>
+            <tr class="table-primary">
                 <td>{{ specialty.code }}</td>
                 <td><a href="{% url 'specialty_detail' pk=specialty.pk %}">{{ specialty.title }}</a></td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+  </div>
 {% endblock %}

@@ -1,11 +1,11 @@
-{% extends 'universities/base.html' %}
-
+{% extends 'base.html' %}
 {% block content %}
+  <div class="container w">
     <div>
         <h1>{{ university.short_title }}</h1>
         <p>{{ university.full_title }}</p>
-        <table class="table">
-            <thead>
+        <table class="table table-primary table-hover">
+            <thead class="thead-dark">
             <tr>
                 <th scope="col">Наименование специальности</th>
                 <th scope="col">Проходной балл</th>
@@ -29,4 +29,5 @@
             </tbody>
         </table>
     </div>
+  </div>
 {% endblock %}
