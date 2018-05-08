@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponse
 from itertools import combinations, chain
 from .models import University, Specialty, SpecialtyScoreForUniversity, Subject
 
@@ -68,5 +68,5 @@ def subjects_and_scores_search(request):
             score_sum = score_sum + int(subject_parsed[subject])
         specialties = specialties.filter(score__lte=score_sum)
         final_list = chain(final_list, specialties)
-    return render(request, 'universities/search.html',
-                  {'specialties': final_list, 'pages': pages})
+
+    return render(request, 'universities/search.html', {'specialties': final_list, 'pages': pages})
