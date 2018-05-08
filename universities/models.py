@@ -2,6 +2,18 @@
 
 from django.db import models
 
+
+class City(models.Model):
+    name = models.CharField(max_length=20)
+
+    class Meta:
+        verbose_name = "Город"
+        verbose_name_plural = "Города"
+
+    def __str__(self):
+        return self.name
+
+
 class Subject(models.Model):
     title = models.CharField(max_length=20)
 
@@ -11,6 +23,7 @@ class Subject(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Specialty(models.Model):
     code = models.CharField(max_length=9)
@@ -28,6 +41,7 @@ class University(models.Model):
     short_title = models.CharField(max_length=200)
     full_title = models.TextField()
     specialties = models.ManyToManyField(Specialty, through='SpecialtyScoreForUniversity')
+    city = models.ForeignKey(City, null=True, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Университет"

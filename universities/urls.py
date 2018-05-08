@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^universities/$', views.university_list, name='university_list'),
     url(r'^university/(?P<pk>\d+)/$', views.university_detail, name='university_detail'),
     url(r'^search_form/$', views.subjects_and_scores_search_form, name='subjects_and_scores_search_form'),
-    url(r'^search/$', views.subjects_and_scores_search, name='subjects_and_scores_search')
+    url(r'^search/$', views.subjects_and_scores_search, name='subjects_and_scores_search'),
+    url(r'^1.png', views.graph, name="graphs"),
 ]
